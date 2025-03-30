@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if transacoes %}
+<table border="1">
+    <thead>
+        <tr>
+            <th>Data Registro</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in transacoes %}
+            <tr>
+                <td>{{ t.data_criado_em | date:"d/m/Y H:i" }}</td>
+                <td>{{ t.descricao | linebreaks}}</td>
+                <td>{{ t.valor | floatformat:"2u"}}</td>
+                <td>{{ t.categoria.nome}}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+    <p>Não há transacoes</p>
+
+{% endif %}
+
+
+<a href="{% url 'nova_transacao' %}">Adcionar Transação</a>
+
+<br>
+{% endblock content %}

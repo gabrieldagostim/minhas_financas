@@ -1,0 +1,8 @@
+<a href="{% url 'index' %}">Minhas Finanças</a>
+<a href="{% url 'transacoes' %}"><button type="button">Transacoes</button></a>
+<a href="{% url 'nova_transacao' %}"><button type="button">Nova Transação</button></a>
+<a href="{% url 'categorias' %}"><button type="button">Categorias</button></a>
+
+{% block content %} {% endblock content %}
+
+<footer>Desenvolvido por Gabriel Dagostim, 2025</footer>

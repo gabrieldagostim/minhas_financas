@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h3>Categoria: {{ categoria }}</h3>
+
+    <p>🔄 Transações: </p>
+    <ul>
+        {% for t in transacoes %}
+            <li>
+                <p>{{ t.data_criado_em | date:"d/m/Y" }} {{ t.data_criado_em | date:"H:i" }}</p>
+                <p>{{ t.descricao | linebreaks }}</p>
+                <p>💸 {{ t.valor | floatformat:"2u" }}</p>
+            </li>
+        {% empty %}
+            <li> Não há registros</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

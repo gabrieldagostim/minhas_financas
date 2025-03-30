@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for categoria in categorias %}
+    <li>
+        <a href="{% url 'transacao_por_cat' categoria.id %}">{{categoria}}</a>
+
+    </li>
+
+{% empty %}
+    <li>
+        <p>Não temos categorias adicionadas.</p>
+    </li>
+{% endfor %}
+
+<a href="{% url 'nova_transacao' %}">Adcionar Transação</a>
+
+{% endblock content %}

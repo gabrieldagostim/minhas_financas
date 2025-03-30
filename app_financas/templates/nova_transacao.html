@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="{% url 'nova_transacao' %}" method="post"> 
+        {% csrf_token %} 
+        <!-- Sempre precisa fazer isso em formulário em Django -->
+        {{ form.as_p }}
+        
+        <button type="submit" name="submit">Adcionar Transacao</button>
+
+    </form>
+
+
+{% endblock content %}
