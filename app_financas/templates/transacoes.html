@@ -7,6 +7,7 @@
     <thead>
         <tr>
             <th>Data Registro</th>
+            <th>Data Transação</th>
             <th>Descrição</th>
             <th>Valor</th>
             <th>categoria</th>
@@ -16,6 +17,7 @@
         {% for t in transacoes %}
             <tr>
                 <td>{{ t.data_criado_em | date:"d/m/Y H:i" }}</td>
+                <td>{{ t.data_transacao | date:"d/m/Y" }}</td>
                 <td>{{ t.descricao | linebreaks}}</td>
                 <td>{{ t.valor | floatformat:"2u"}}</td>
                 <td>{{ t.categoria.nome}}</td>

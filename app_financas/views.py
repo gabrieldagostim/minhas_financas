@@ -36,7 +36,7 @@ def home(request):
 def transacoes(request):
     '''Mostra todas as transacoes registrada'''
     if request.method == 'GET':
-        transacoes = Transacao.objects.order_by('data_criado_em')
+        transacoes = Transacao.objects.order_by('data_transacao')
         context = {'transacoes': transacoes} # para retornar o contexto
 
         return render(request, 'transacoes.html', context=context)
@@ -77,3 +77,14 @@ def categorias(request):
     context = {'categorias': categorias}
 
     return render(request, 'categorias.html', context=context)
+
+
+
+def nova_categoria(request):
+    return render(request, 'nova_categoria.html')
+
+def processa_formulario(request):
+
+    nome = request.POST.get('nome')
+    email = request.POST.get('email')
+    return HttpResponse(f' {nome} -> {email}')

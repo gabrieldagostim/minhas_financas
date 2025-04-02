@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<br>
+<form action="{% url 'processa_formulario' %}" method="post"> {% csrf_token %}
+    <label>Nome:</label>
+    <input type="text" placeholder="Nome" name="nome">
+
+    <label>Email:</label>
+    <input type="email" placeholder="Email" name="email">
+
+    <input type="submit" value="Enviar">
+
+</form>
+
+
+{% endblock content %}

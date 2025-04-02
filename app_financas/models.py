@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
 
 # Aqui criamos as coisas que vamos colocar no banco de dados, as informações que
@@ -29,6 +29,7 @@ class Transacao(models.Model):
         __str__(): Retorna uma representação em string da transação no formato 'dd/mm/aaaa - descricao'.
     """
     data_criado_em = models.DateTimeField(auto_now=True)
+    data_transacao = models.DateTimeField(default=timezone.now)
     descricao = models.CharField(max_length=50)
     valor = models.FloatField()
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
