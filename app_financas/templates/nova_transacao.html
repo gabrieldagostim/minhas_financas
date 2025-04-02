@@ -2,14 +2,40 @@
 
 {% block content %}
 
-    <form action="{% url 'nova_transacao' %}" method="post"> 
-        {% csrf_token %} 
-        <!-- Sempre precisa fazer isso em formulário em Django -->
+<!-- <form action="{% url 'nova_transacao' %}" method="post"> 
+        {% csrf_token %}      
         {{ form.as_p }}
         
-        <button type="submit" name="submit">Adcionar Transacao</button>
+        <button type="submit" name="submit">Adcionar Transacao</button>    
+    -->
 
-    </form>
+<form action="/cadastrar_transacao" method="post">        
+    <p>
+        <label for="id_descricao">Descrição:</label>
+        <input type="text" name="descricao" maxlength="50" required="" id="id_descricao">
+    </p>
+
+    <p>
+        <label for="id_valor">Valor:</label>
+        <input type="number" name="valor" step="any" required="" id="id_valor">
+    </p>
+
+    <p>
+        <label for="id_categoria">Categoria:</label>
+        <select name="categoria" required="" id="id_categoria">
+            <option value="" selected="">---------</option>
+
+            <option value="1">Salário</option>
+
+            <option value="2">Viagem</option>
+
+            <option value="3">Investiment</option>
+        </select>
+    </p>
+
+    <button class="button" type="submit" name="submit">Adicionar Transação</button>
+
+</form>
 
 
 {% endblock content %}

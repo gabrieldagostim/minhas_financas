@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.button {
+    border-radius: 8px;    
+    background-color: #1E252210;   
+    color: hsl(154, 10%, 13%);
+    padding: 10px 20px;
+    font-weight: 600;
+    border: none;   
+    transition-duration: 200ms; 
+}
+
+.button :active{
+    border-radius: 8px;    
+    background-color: #0ACF83;   
+    color: #1E2522;
+    padding: 10px 20px;
+    font-weight: 600;
+    border: none;   
+    transition-duration: 200ms; 
+}
+
+.button:hover{
+    cursor: pointer;    
+    opacity: 60%;    
+    transition-duration: 200ms;
+}

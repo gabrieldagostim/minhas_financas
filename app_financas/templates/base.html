@@ -1,8 +1,22 @@
-<a href="{% url 'index' %}">Minhas Finanças</a>
-<a href="{% url 'transacoes' %}"><button type="button">Transacoes</button></a>
-<a href="{% url 'nova_transacao' %}"><button type="button">Nova Transação</button></a>
-<a href="{% url 'categorias' %}"><button type="button">Categorias</button></a>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block content %} {% endblock content %}
-
-<footer>Desenvolvido por Gabriel Dagostim, 2025</footer>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/global.css' %}">
+    
+    <title>Minhas finanças</title>
+</head>
+<body>
+        <a href="{% url 'index' %}">Minhas Finanças</a>
+        <a href="{% url 'transacoes' %}"><button class="button" type="button">Transacoes</button></a>
+        <a href="{% url 'nova_transacao' %}"><button class="button" type="button">Nova Transação</button></a>
+        <a href="{% url 'categorias' %}"><button class="button" type="button">Categorias</button></a>
+        
+        {% block content %} {% endblock content %}
+        
+        <footer>Desenvolvido por Gabriel Dagostim, 2025</footer>    
+</body>
+</html>
